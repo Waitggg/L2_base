@@ -1,0 +1,24 @@
+function primeFactors(n){
+  let tmp = n, result = "";
+  for(let i = 2; i <= tmp; i++)
+    {
+      let count = 0;
+      while(tmp % i == 0)
+        {
+          count++;
+          tmp/=i;
+        }
+      if(count > 0)
+        {
+          if(count == 1)
+            {
+              result += `(${i})`;
+            }
+          else
+            {
+              result += `(${i}**${count})`;
+            }
+        }      
+    }
+  return result;
+}

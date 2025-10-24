@@ -1,0 +1,13 @@
+function cache(originalFunction) {
+  const mem = {};
+  return function(...args)
+  {
+    const k = JSON.stringify(args);
+    if(mem.hasOwnProperty(k))
+      {
+        return mem[k]; 
+      }
+    mem[k] = originalFunction(...args);
+    return mem[k];
+  }
+}

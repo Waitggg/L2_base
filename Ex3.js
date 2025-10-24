@@ -1,0 +1,10 @@
+function whatCentury(year)
+{
+  let ans = year / 100 != Math.floor(year / 100)? (Math.floor(year / 100) + 1) : Math.floor(year / 100);
+  if ((ans >= 11 && ans <= 13) || ans % 10 >= 4) 
+  {
+    return ans+"th";
+  }
+  const ends = ["th", "st", "nd", "rd"];
+  return ans + ends[ans%10]
+}
